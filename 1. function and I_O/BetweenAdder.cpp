@@ -1,23 +1,27 @@
+/*
+    ë‘ ê°œì˜ ìˆ«ìì…ë ¥: 3 7
+    ë‘ ìˆ˜ ì‚¬ì´ì˜ ì •ìˆ˜ í•©: 15
+*/
 #include <iostream>
 
+using namespace std;
+
 int main(void) {
-    int val3, val4;
-    std::cout << "µÎ °³ÀÇ ¼ıÀÚÀÔ·Â: ";
-    std::cin >> val3 >> val4;
-    int result2 = 0;
-    if (val3 < val4) {
-        for (int i = val3 + 1; i < val4; i++) {
-            result2 += i;
+    int val1, val2;
+    int result = 0;
+    cout << "ë‘ ê°œì˜ ìˆ«ìì…ë ¥: ";
+    cin >> val1 >> val2;
+
+    if (val1 < val2) {
+        for (int i = val1 + 1; i < val2; i++) {
+            result += i;
         }
-    } else {
-        for (int i = val4 + 1; i < val3; i++) {
-            result2 += i;
+    } else {  // val1>val2
+        for (int i = val2 + 1; i < val1; i++) {
+            result += i;
         }
     }
-    std::cout << "µÎ ¼ö »çÀÌÀÇ Á¤¼ö ÇÕ: " << result2 << std::endl;
+
+    cout << "ë‘ ìˆ˜ ì‚¬ì´ì˜ ì •ìˆ˜ í•©: " << result << endl;
     return 0;
 }
-/*
-    µÎ °³ÀÇ ¼ıÀÚÀÔ·Â :3 7
-    µÎ ¼ö »çÀÌÀÇ Á¤¼ö ÇÕ: 15
-*/
