@@ -51,5 +51,8 @@
         "text_encoding": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "prettier.embeddedLanguageFormatting": "auto",
+    "prettier.tabWidth": 4,
+    "editor.defaultFormatter": null
 }
