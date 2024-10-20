@@ -19,13 +19,21 @@ class Car {
     int curSpeed;
 
    public:
-    void InitMembers(char* ID, int fuel);
+    void InitMembers(const char *ID, int fuel);
     void ShowCarState();
     void Accel();
     void Break();
 };
 
-void Car::InitMembers(char* ID, int fuel) {
+/*
+const char*가 아닌 char*를 매개변수로 설졍하면
+warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   63 |     run99.InitMembers("run99", 100);
+      |                       ^~~~~~~
+위와 같은 경고가 발생합니다.
+*/
+
+void Car::InitMembers(const char *ID, int fuel) {
     strcpy(gamerID, ID);
     fuelGauge = fuel;
     curSpeed = 0;
@@ -34,7 +42,7 @@ void Car::InitMembers(char* ID, int fuel) {
 void Car::ShowCarState() {
     cout << "소유자ID: " << gamerID << endl;
     cout << "연료량: " << fuelGauge << "%" << endl;
-    cout << "현재속도: " << curSpeed << "km/s" << endl
+    cout << "현재속도: " << curSpeed << "km/s\n"
          << endl;
 }
 
