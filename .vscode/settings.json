@@ -50,7 +50,8 @@
         "streambuf": "cpp",
         "text_encoding": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cstring": "cpp"
     },
     "prettier.embeddedLanguageFormatting": "auto",
     "prettier.tabWidth": 4,

@@ -1,3 +1,7 @@
+/*
+    [5 ,14]
+    [25 ,44]
+*/
 #include <iostream>
 using namespace std;
 

@@ -7,10 +7,10 @@ class Calculator {
 
    public:
     void Init();
-    double Add(float f1, float f2);
-    double Min(float f1, float f2);
-    double Mul(float f1, float f2);
-    double Div(float f1, float f2);
+    double Add(double n1, double n2);
+    double Min(double n1, double n2);
+    double Mul(double n1, double n2);
+    double Div(double n1, double n2);
     void ShowOpCount();
 };
 
@@ -21,28 +21,31 @@ void Calculator::Init() {
     div = 0;
 }
 
-double Calculator::Add(float f1, float f2) {
+double Calculator::Add(double n1, double n2) {
     add += 1;
-    return f1 + f2;
+    return n1 + n2;
 }
 
-double Calculator::Min(float f1, float f2) {
+double Calculator::Min(double n1, double n2) {
     min += 1;
-    return f1 - f2;
+    return n1 - n2;
 }
 
-double Calculator::Mul(float f1, float f2) {
+double Calculator::Mul(double n1, double n2) {
     mul += 1;
-    return f1 * f2;
+    return n1 * n2;
 }
 
-double Calculator::Div(float f1, float f2) {
+double Calculator::Div(double n1, double n2) {
     div += 1;
-    return f1 / f2;
+    return n1 / n2;
 }
 
 void Calculator::ShowOpCount() {
-    cout << "덧셈: " << add << " 뺄셈: " << min << " 곱셈: " << mul << " 나눗셈: " << div << endl;
+    cout << "덧셈: " << add << ' ';
+    cout << "뺄셈: " << min << ' ';
+    cout << "곱셈: " << mul << ' ';
+    cout << "나눗셈: " << div << endl;
 }
 
 int main(void) {
