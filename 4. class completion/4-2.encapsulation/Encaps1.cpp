@@ -37,10 +37,10 @@ class ColdPatient {
 int main(void) {
     SinivelCap scap;
     SneezeCap zcap;
-    SnuffleCap fcap;
+    SnuffleCap ncap;
     ColdPatient cp;
     cp.TakeSinivelCap(scap);
     cp.TakeSneezeCap(zcap);
-    cp.TakeSnuffleCap(fcap);
+    cp.TakeSnuffleCap(ncap);
     return 0;
 }
