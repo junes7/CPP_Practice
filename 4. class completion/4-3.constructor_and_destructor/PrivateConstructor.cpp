@@ -1,3 +1,8 @@
+/*
+    0
+    3
+    12
+*/
 #include <iostream>
 using namespace std;
 

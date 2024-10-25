@@ -1,5 +1,6 @@
 /*
     empty object
+    empty object2
     I'm class AAA
     and
     I ref num 20
@@ -26,6 +27,7 @@ class BBB {
    public:
     BBB(AAA &a, const int &n)
         : ref(a), num(n) {
+        cout << "empty object2" << endl;
     }
     void ShowYourName() const {
         ref.ShowYourName();
