@@ -20,14 +20,14 @@ class Person {
         cout << "called Person()" << endl;
     }
 
-    void ShowPersonInfo() const {
-        cout << "이름: " << name << ", ";
-        cout << "나이: " << age << endl;
-    }
-
     void SetPersonInfo(char *myname, int myage) {
         name = myname;
         age = myage;
+    }
+
+    void ShowPersonInfo() {
+        cout << "이름: " << name << ", ";
+        cout << "나이: " << age << endl;
     }
 
     ~Person() {
@@ -37,22 +37,21 @@ class Person {
 };
 
 int main(void) {
-    Person parr[3];
+    Person *parr[3];
     char namestr[50];
-    char *nameptr;
     int age;
     for (int i = 0; i < 3; i++) {
         cout << "이름: ";
         cin >> namestr;
         cout << "나이: ";
         cin >> age;
-        nameptr = new char[strlen(namestr) + 1];
-        strcpy(nameptr, namestr);
-        parr[i].SetPersonInfo(nameptr, age);
+        parr[i] = new Person(namestr, age);
     }
-
     for (int i = 0; i < 3; i++) {
-        parr[i].ShowPersonInfo();
+        parr[i]->ShowPersonInfo();
+    }
+    for (int i = 0; i < 3; i++) {
+        delete parr[i];
     }
     return 0;
 }

@@ -29,27 +29,34 @@ class NameCard {
    private:
     char *name;
     char *company;
-    char *cellphone;
+    char *phone;
     int position;
 
    public:
-    NameCard(const char *myname, const char *mycompany, const char *mycellphone, int pos)
+    NameCard(const char *myname, const char *mycompany, const char *myphone, int pos)
         : position(pos) {
         name = new char[strlen(myname) + 1];
         company = new char[strlen(mycompany) + 1];
-        cellphone = new char[strlen(mycellphone) + 1];
+        phone = new char[strlen(myphone) + 1];
         strcpy(name, myname);
         strcpy(company, mycompany);
-        strcpy(cellphone, mycellphone);
+        strcpy(phone, myphone);
     }
 
     void ShowNameCardInfo() {
         cout << "이름: " << name << endl;
         cout << "회사: " << company << endl;
-        cout << "전화번호: " << cellphone << endl;
+        cout << "전화번호: " << phone << endl;
         cout << "직급: ";
         COMP_POS::ShowPositionInfo(position);
         cout << endl;
+    }
+
+    ~NameCard() {
+        delete[] name;
+        delete[] company;
+        delete[] phone;
+        cout << "called destructor!" << endl;
     }
 };
 
