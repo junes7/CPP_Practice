@@ -4,26 +4,34 @@ using namespace std;
 
 class PermanentWorker {
    private:
+    // char *name;
     char name[50];
     int salary;
 
    public:
-    PermanentWorker(const char *name, int money)
+    PermanentWorker(const char *myname, const int money)
         : salary(money) {
-        strcpy(this->name, name);
+        // name = new char[strlen(myname)];
+        strcpy(name, myname);
     }
+
     int GetPay() const { return salary; }
+
     void ShowSalaryInfo() const {
         cout << "name: " << name << endl;
-        cout << "salary: " << GetPay() << endl
+        cout << "salary: " << salary << endl
              << endl;
     }
+
+    // ~PermanentWorker() {
+    //     delete[] name;
+    // }
 };
 
 class EmployeeHandler {
    private:
-    PermanentWorker *empList[50];
     int empNum;
+    PermanentWorker *empList[50];
 
    public:
     EmployeeHandler() : empNum(0) {}
@@ -60,4 +68,5 @@ int main(void) {
     handler.ShowAllSalaryInfo();
     // 이번 달에 지불해야 할 급여 총합
     handler.ShowTotalSalary();
+    return 0;
 }
