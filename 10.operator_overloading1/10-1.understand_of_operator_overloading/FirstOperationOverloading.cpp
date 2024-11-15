@@ -1,3 +1,9 @@
+/*
+[3, 4]
+[10, 20]
+[13, 24]
+[7, 16]
+*/
 #include <cstring>
 #include <iostream>
 using namespace std;
